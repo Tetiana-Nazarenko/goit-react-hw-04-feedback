@@ -3,7 +3,7 @@ import { ButtonBlock, Button } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <ButtonBlock>
-    {options.map(option => (
+    {Object.keys(options).map(option => (
       <Button key={option} onClick={() => onLeaveFeedback(option)}>
         {option}
       </Button>
@@ -12,6 +12,6 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
 );
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.array,
+  options: PropTypes.object,
   onLeaveFeedback: PropTypes.func,
 };
